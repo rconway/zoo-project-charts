@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ .Release.Name }}-bin-config
-data:
-{{ (tpl (.Files.Glob "files/bin/*").AsConfig . ) | indent 4 }}
