@@ -212,6 +212,10 @@ workflow:
   env: {}
   inputs: {}
   additionalInputs: {}
+  extraEnvFrom: []
+  # extraEnvFrom:
+  #   - secretRef:
+  #       name: my-extra-secret
   dedicatedNamespace:
     enabled: false
     #name: "my-dedicated-namespace"

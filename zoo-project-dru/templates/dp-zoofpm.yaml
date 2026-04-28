@@ -64,6 +64,10 @@ spec:
           imagePullPolicy: {{ .Values.zoofpm.image.pullPolicy }}
           command: ["/startup.sh"]
           resources: {}
+          {{- with .Values.workflow.extraEnvFrom }}
+          envFrom:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           env:
             - name: ORIGIN_NAMESPACE
               value: {{ .Release.Namespace }}
